@@ -1,47 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Appointment Booking</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appointment Booking</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <div class="container">
 
-<div class="left">
-<img src="doctor.png" alt="doctor">
-</div>
+  <div class="left">
+    <img src="doctor.png" alt="doctor" />
+  </div>
 
-<div class="right">
+  <div class="right">
 
-<img src="logo.png" class="logo">
+    <img src="logo.png" class="logo" alt="Logo" />
 
-<h1>AJAY DIAGNOSTIC CENTRE</h1>
+    <!-- Step 1 -->
+    <div id="step1" class="step active">
+      <h1>DR. JP DIAGNOSTIC CENTRE</h1>
+      <p>For any query contact on:</p>
+      <h3>📋 Appointment Booking</h3>
+      <p>Referral From : Self, Direct</p>
+      <p class="step-indicator">Step <strong>1</strong> of 5</p>
 
-<p class="query">For any query contact on:</p>
+      <label for="phone">10 Digit Phone Number *</label>
+      <input type="tel" id="phone" placeholder="Enter phone no." maxlength="10" />
+      <p id="error1" class="error-msg" style="display:none;">Please enter a valid 10-digit phone number.</p>
 
-<h3>📋 Appointment Booking</h3>
+      <button id="next1">Next</button>
+    </div>
 
-<p>Referral From : Self, Direct</p>
+    <!-- Step 2 -->
+    <div id="step2" class="step">
+      <h1>DR. JP DIAGNOSTIC CENTRE</h1>
+      <p>For any query contact on:</p>
+      <h3>📋 Appointment Booking</h3>
+      <p>Referral From : Self, Direct</p>
+      <p class="step-indicator">Step <strong>2</strong> of 5</p>
 
-<p class="step">Step 1 of 5</p>
+      <h4>Select Appointment Type</h4>
+      <div class="appointment-types">
+        <button class="appt-btn selected" id="walkin">🚶 WALK IN</button>
+        <button class="appt-btn" id="homecollection">🏠 HOME COLLECTION</button>
+        <button class="appt-btn" id="requestcallback">📞 REQUEST CALLBACK</button>
+      </div>
 
-<label>10 Digit Phone Number *</label>
+      <form id="step2Form">
+        <label>Title *</label>
+        <select id="title" required>
+          <option value="">Select Title</option>
+          <option>Mr.</option>
+          <option>Ms.</option>
+          <option>Mrs.</option>
+          <option>Dr.</option>
+        </select>
 
-<input type="tel" id="phone" placeholder="Enter phone no.">
+        <label>Name *</label>
+        <input type="text" id="name" placeholder="Full name" required />
 
-<p id="error">This field is required</p>
+        <label>Birth Date</label>
+        <input type="date" id="birthdate" />
 
-<button onclick="nextStep()">Next</button>
+        <label>Sex *</label>
+        <select id="sex" required>
+          <option value="">Select Sex</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
 
-</div>
+        <label>Address *</label>
+        <textarea id="address" placeholder="Address" required></textarea>
+        <button type="button" onclick="detectLocation()">Detect</button>
+
+        <label>Phone *</label>
+        <input type="tel" id="phone2" placeholder="Phone" required />
+
+        <label>Phone 2</label>
+        <input type="tel" id="phone3" placeholder="Phone" />
+
+        <label>City *</label>
+        <input type="text" id="city" placeholder="City" required />
+
+        <label>PIN Code *</label>
+        <input type="text" id="pincode" placeholder="PIN Code" required />
+
+        <label>State</label>
+        <input type="text" id="state" placeholder="State" />
+
+        <label>District</label>
+        <input type="text" id="district" placeholder="District" />
+
+        <label>Aadhar Number</label>
+        <input type="text" id="aadhar" placeholder="Aadhar Number" />
+
+        <label>Passport Number</label>
+        <input type="text" id="passport" placeholder="Passport Number" />
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Email" />
+
+        <button id="next2" type="button">Next</button>
+        <button id="back2" type="button">Back</button>
+      </form>
+    </div>
+
+    <!-- Steps 3, 4, 5 go here similarly... -->
+
+  </div>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
-
