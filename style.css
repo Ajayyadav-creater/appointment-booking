@@ -100,3 +100,23 @@ font-size:12px;
 display:none;
 
 }
+.form-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+}
